@@ -13,6 +13,7 @@ from tkinter import *
 import tkinter.font as font
 import urllib.request
 
+
 #*************************************START CONNECTION**************************************
 
 # Open UART serial connection
