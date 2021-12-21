@@ -4,8 +4,8 @@ import os
 import PIL.Image
 import PIL.ImageTk
 import pyfireconnect
-#import RPi.GPIO as GPIO
-#import serial
+import RPi.GPIO as GPIO
+import serial
 import sys
 import threading
 import time
@@ -17,8 +17,7 @@ import urllib.request
 #*************************************START CONNECTION**************************************
 
 # Open UART serial connection
-#ser = serial.Serial("/dev/ttyS0", 115200)  # opens port with baud rate
-ser = ""
+ser = serial.Serial("/dev/ttyS0", 115200)  # opens port with baud rate
 
 #**************************************FIREBASE SET UP**************************************
 
@@ -63,18 +62,18 @@ if(hasInternet):
 # Color variables for consistency
 main_bg = "#FFFFFF" #switched from gray20
 button_color = "#CCCDD0" #switched from gray20
-donatos_path = "donatos.png" #switched from white
+donatos_path = "/home/pi/SaucerCode/donatos.png" #switched from white
 main_fg = "#000000" #switched from FFFFFF
 
-imageOne_path = "donatos.png"
-imageTwo_path = "donatos.png"
-imageThree_path = "donatos.png"
-imageFour_path = "donatos.png"
-imageFive_path = "donatos.png"
-imageSix_path = "donatos.png"
-imageSeven_path = "donatos.png"
-imageEight_path = "donatos.png"
-imageNine_path = "donatos.png"
+imageOne_path = "/home/pi/SaucerCode/donatos.png"
+imageTwo_path = "/home/pi/SaucerCode/donatos.png"
+imageThree_path = "/home/pi/SaucerCode/donatos.png"
+imageFour_path = "/home/pi/SaucerCode/donatos.png"
+imageFive_path = "/home/pi/SaucerCode/donatos.png"
+imageSix_path = "/home/pi/SaucerCode/donatos.png"
+imageSeven_path = "/home/pi/SaucerCode/donatos.png"
+imageEight_path = "/home/pi/SaucerCode/donatos.png"
+imageNine_path = "/home/pi/SaucerCode/donatos.png"
 
 # Light, normal, extra sauce speeds
 lt = 1.25
@@ -82,7 +81,7 @@ med = 1
 ext = 0.75
 
 # Size calibrations from file
-with open('diagnostics.txt', 'r') as reader:
+with open('/home/pi/SaucerCode/diagnostics.txt', 'r') as reader:
         calibs = reader.read().splitlines()
 
 global calibration
